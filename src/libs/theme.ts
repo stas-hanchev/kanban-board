@@ -1,36 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 import type { ColumnId } from './types';
 
-declare module '@mui/material/styles' {
-  interface Theme {
-    custom: {
-      colors: typeof colors;
-      breakpoints: typeof breakpoints;
-      devices: typeof devices;
-      shadows: {
-        card: string;
-      };
-      radii: {
-        card: string;
-        wrapper: string;
-      };
-      fontSizes: {
-        small: string;
-      };
-    };
-  }
-
-  interface ThemeOptions {
-    custom?: Theme['custom'];
-  }
-}
-
-export const statusColors: Record<ColumnId, string> = {
-    todo: '#7b8794',
-    inProgress: '#d98e1f',
-    done: '#2f8f6b',
-}
-
 export const breakpoints = {
   xs: '0px',
   sm: '600px',
@@ -44,6 +14,12 @@ export const devices = {
   tablet: `(min-width: ${breakpoints.sm}) and (max-width: ${breakpoints.md})`,
   desktop: `(min-width: ${breakpoints.md})`,
 };
+
+export const statusColors: Record<ColumnId, string> = {
+    todo: '#7b8794',
+    inProgress: '#d98e1f',
+    done: '#2f8f6b',
+}
 
 export const colors = {
   primary: '#1f6f6b',
@@ -66,16 +42,32 @@ export const colors = {
   shadow: 'rgba(23, 51, 47, 0.08)',
 };
 
-export const theme = createTheme({
+export const customTheme = {
+  colors,
+  breakpoints,
+  devices,
+  shadows: {
+    card: `0px 1px 0px ${colors.shadow}`,
+  },
+  radii: {
+    card: '8px',
+    wrapper: '10px',
+  },
+  fontSizes: {
+    small: '14px',
+  },
+};
+
+export const muiTheme = createTheme({
   palette: {
     primary: { main: colors.primary },
-    background: { 
-      default: colors.background.default, 
-      paper: colors.background.paper 
+    background: {
+      default: colors.background.default,
+      paper: colors.background.paper,
     },
-    text: { 
-      primary: colors.text.primary, 
-      secondary: colors.text.secondary 
+    text: {
+      primary: colors.text.primary,
+      secondary: colors.text.secondary,
     },
   },
   shape: { borderRadius: 8 },
@@ -83,22 +75,11 @@ export const theme = createTheme({
     fontFamily: 'Inter, sans-serif',
     button: { textTransform: 'none', fontWeight: 600 },
   },
-  // Кастомні поля для styled-components
-  custom: {
-    colors,
-    breakpoints,
-    devices,
-    shadows: {
-      card: `0px 1px 0px ${colors.shadow}`,
-    },
-    radii: {
-      card: '8px',
-      wrapper: '10px',
-    },
-    fontSizes: {
-      small: '14px',
-    },
-  },
 });
+
+export const theme = {
+  ...muiTheme,
+  custom: customTheme,
+};
 
 export default theme;

@@ -1,8 +1,6 @@
-import Typography from '@mui/material/Typography'
-
+import Typography from '@mui/material/Typography';
+import { Card } from '../styled/index';
 import type { Task } from '../libs/types'
-
-import Card from '../styled/TaskCard';
 
 interface TaskCardProps {
     task: Task

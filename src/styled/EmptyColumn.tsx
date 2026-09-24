@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Empty = styled.div`
+const EmptyColumn = styled.div`
     border: 2px dashed ${({ theme }) => theme.custom.colors.border.dashed};
     border-radius: ${({ theme }) => theme.custom.radii.card};
     padding: 16px;
@@ -14,4 +14,4 @@ const Empty = styled.div`
     }
 `
 
-export default Empty
+export default EmptyColumn;

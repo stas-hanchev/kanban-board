@@ -1,14 +1,8 @@
 import { useState } from 'react';
-
-import Header from '../components/Header';
-import AddTaskDialog from '../components/AddTaskDialog';
-import Column from '../components/Column';
-
-import type { ColumnId } from '../libs/types';
-
+import { AddTaskDialog, Column, Header } from '../components/index.ts';
 import Page from '../styled/Page';
 import Board from '../styled/Board';
-
+import type { ColumnId } from '../libs/types';
 interface DialogState {
     open: boolean;
     column: ColumnId;

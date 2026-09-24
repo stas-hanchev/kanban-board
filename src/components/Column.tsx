@@ -1,14 +1,9 @@
 import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
 import TaskCard from './TaskCard'
-import { statusColors } from '../libs/theme'
-
-import Empty from '../styled/EmptyColumn';
-import Head from '../styled/ColumnHead';
-import List from '../styled/TaskList';
-import Wrapper from '../styled/Wrapper';
-
+import { EmptyColumn, ColumnHead, List, Wrapper } from '../styled/index';
 import type { ColumnData } from '../libs/types'
+import { statusColors } from '../libs/theme';
 
 interface ColumnProps {
     column: ColumnData
@@ -16,13 +11,13 @@ interface ColumnProps {
 
 const Column = ({ column }: ColumnProps) => (
     <Wrapper $color={statusColors[column.id]}>
-        <Head>
+        <ColumnHead>
             <Typography variant="h2">{column.title}</Typography>
             <Chip label={column.tasks.length} size="small" />
-        </Head>
+        </ColumnHead>
         <List>
             {column.tasks.length === 0 ? (
-                <Empty>No tasks in this column</Empty>
+                <EmptyColumn>No tasks in this column</EmptyColumn>
             ) : (
                 column.tasks.map((task) => (
                     <TaskCard key={task.id} task={task} />

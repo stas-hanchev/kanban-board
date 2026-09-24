@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import AddIcon from '@mui/icons-material/Add'
 
-import Brand from '../styled/Brand'
+import { Brand } from '../styled/index';
 
 interface HeaderProps {
     onAddTask: () => void

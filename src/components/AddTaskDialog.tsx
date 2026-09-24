@@ -21,11 +21,7 @@ interface AddTaskDialogProps {
     onClose: () => void
 }
 
-export default function AddTaskDialog({
-    open,
-    defaultColumn = 'todo',
-    onClose,
-}: AddTaskDialogProps) {
+const AddTaskDialog = ({ open, defaultColumn = 'todo', onClose }: AddTaskDialogProps) => {
     const [column, setColumn] = useState<ColumnId>(defaultColumn)
 
     return (
@@ -74,3 +70,5 @@ export default function AddTaskDialog({
         </Dialog>
     )
 }
+
+export default AddTaskDialog;

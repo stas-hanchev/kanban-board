@@ -1,25 +1,13 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+
 import Header from '../components/Header';
 import AddTaskDialog from '../components/AddTaskDialog';
 import Column from '../components/Column';
+
 import type { ColumnId } from '../libs/types';
 
-const Page = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-`;
-
-const Board = styled.main`
-    display: flex;
-    flex: 1;
-    padding: 20px;
-    gap: 16px;
-    align-items: flex-start;
-    overflow-x: auto;
-    min-height: 0;
-`;
+import Page from '../styled/Page';
+import Board from '../styled/Board';
 
 interface DialogState {
     open: boolean;

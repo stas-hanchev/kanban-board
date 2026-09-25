@@ -11,3 +11,9 @@ export interface ColumnData {
     title: string
     tasks: Task[]
 }
+
+export interface DialogState {
+    open: boolean;
+    column: ColumnId;
+}
+

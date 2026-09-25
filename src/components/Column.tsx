@@ -12,7 +12,9 @@ interface ColumnProps {
 const Column = ({ column }: ColumnProps) => (
     <Wrapper $color={statusColors[column.id]}>
         <ColumnHead>
-            <Typography variant="h2">{column.title}</Typography>
+            <Typography variant="subtitle1" component="h2" sx={{ fontWeight: 700 }}>
+                {column.title}
+            </Typography>
             <Chip label={column.tasks.length} size="small" />
         </ColumnHead>
         <List>

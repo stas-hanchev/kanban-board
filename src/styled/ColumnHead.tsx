@@ -5,6 +5,6 @@ const ColumnHead = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 2px 4px 12px;
-    width: 400px;
+    width: 100%;
 `
 export default ColumnHead;

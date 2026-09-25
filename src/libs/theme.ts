@@ -9,9 +9,15 @@ export const breakpoints = {
   xl: '1536px',
 };
 
+// export const devices = {
+//   mobile: `(max-width: ${breakpoints.sm})`,
+//   tablet: `(min-width: ${breakpoints.sm}) and (max-width: ${breakpoints.md})`,
+//   desktop: `(min-width: ${breakpoints.md})`,
+// };
+
 export const devices = {
-  mobile: `(max-width: ${breakpoints.sm})`,
-  tablet: `(min-width: ${breakpoints.sm}) and (max-width: ${breakpoints.md})`,
+  mobile: `(max-width: 599.95px)`,
+  tablet: `(min-width: ${breakpoints.sm}) and (max-width: 899.95px)`,
   desktop: `(min-width: ${breakpoints.md})`,
 };
 

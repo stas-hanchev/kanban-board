@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import AddIcon from '@mui/icons-material/Add'
 
-import { Brand } from '../styled/index';
+import { Brand, ButtonLabel } from '../styled/index';
 
 interface HeaderProps {
     onAddTask: () => void
@@ -20,7 +20,7 @@ const Header = ({ onAddTask }: HeaderProps) => (
             </Brand>
             <Button color="inherit" onClick={onAddTask}>
                 <AddIcon />
-                Add Task
+                <ButtonLabel>Add Task</ButtonLabel>
             </Button>
         </Toolbar>
     </AppBar>

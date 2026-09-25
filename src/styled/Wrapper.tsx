@@ -9,10 +9,19 @@ const Wrapper = styled.div<{ $color: string }>`
     display: flex;
     flex-direction: column;
     max-height: 100%;
+    min-width: 0;
 
+    /* планшет: три колонки ділять ширину порівну, без горизонтального скролу */
+    @media ${({ theme }) => theme.custom.devices.tablet} {
+        flex: 1 1 0;
+        padding: 10px;
+    }
+
+    /* мобільний: колонка майже на всю ширину, край наступної трохи видно */
     @media ${({ theme }) => theme.custom.devices.mobile} {
-        flex: 0 0 100%;
+        flex: 0 0 88%;
         padding: 8px;
+        scroll-snap-align: start;
     }
 `
 

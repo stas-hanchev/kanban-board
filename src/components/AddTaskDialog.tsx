@@ -6,6 +6,8 @@ import DialogActions from '@mui/material/DialogActions'
 import TextField from '@mui/material/TextField'
 import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import { useTheme } from '@mui/material/styles'
 
 import type { ColumnId } from '../libs/types'
 
@@ -21,11 +23,17 @@ interface AddTaskDialogProps {
     onClose: () => void
 }
 
-const AddTaskDialog = ({ open, defaultColumn = 'todo', onClose }: AddTaskDialogProps) => {
+const AddTaskDialog = ({
+    open,
+    defaultColumn = 'todo',
+    onClose,
+}: AddTaskDialogProps) => {
     const [column, setColumn] = useState<ColumnId>(defaultColumn)
+    const muiTheme = useTheme()
+    const fullScreen = useMediaQuery(muiTheme.breakpoints.down('sm'))
 
     return (
-        <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+        <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth fullScreen={fullScreen}>
             <DialogTitle>Add New Task</DialogTitle>
             <DialogContent>
                 <TextField
@@ -71,4 +79,4 @@ const AddTaskDialog = ({ open, defaultColumn = 'todo', onClose }: AddTaskDialogP
     )
 }
 
-export default AddTaskDialog;
+export default AddTaskDialog

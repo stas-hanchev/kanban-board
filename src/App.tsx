@@ -1,7 +1,14 @@
-import BoardPage from "./pages/BoardPage";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import BoardPage from './pages/BoardPage'
+import NotFoundPage from './pages/NotFoundPage'
 
-function App() {
-  return (<BoardPage />);
-}
+const App = () => (
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<BoardPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+    </BrowserRouter>
+);
 
 export default App

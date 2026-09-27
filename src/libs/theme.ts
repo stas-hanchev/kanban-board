@@ -54,6 +54,7 @@ export const customTheme = {
   devices,
   shadows: {
     card: `0px 1px 0px ${colors.shadow}`,
+    dragging: `0px 8px 20px rgba(23, 51, 47, 0.2)`,
   },
   radii: {
     card: '8px',

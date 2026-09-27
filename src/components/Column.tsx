@@ -1,3 +1,4 @@
+import { Droppable } from '@hello-pangea/dnd';
 import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
 import TaskCard from './TaskCard'
@@ -17,15 +18,24 @@ const Column = ({ column }: ColumnProps) => (
             </Typography>
             <Chip label={column.tasks.length} size="small" />
         </ColumnHead>
-        <List>
-            {column.tasks.length === 0 ? (
-                <EmptyColumn>No tasks in this column</EmptyColumn>
-            ) : (
-                column.tasks.map((task) => (
-                    <TaskCard key={task.id} task={task} />
-                ))
+        <Droppable droppableId={column.id}>
+            {(provided, snapshot) => (
+                <List
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                    $isDraggingOver={snapshot.isDraggingOver}
+                >
+                    {column.tasks.length === 0 && !snapshot.isDraggingOver ? (
+                        <EmptyColumn>No tasks in this column</EmptyColumn>
+                    ) : (
+                        column.tasks.map((task, index) => (
+                            <TaskCard key={task.id} task={task} index={index} />
+                        ))
+                    )}
+                    {provided.placeholder}
+                </List>
             )}
-        </List>
+        </Droppable>
     </Wrapper>
 )
 

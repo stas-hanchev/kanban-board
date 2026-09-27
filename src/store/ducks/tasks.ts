@@ -6,6 +6,7 @@ import type { ColumnData, ColumnId, Task } from '../../libs/types';
 const ADD_TASK_REQUEST = 'kanban/tasks/ADD_TASK_REQUEST';
 const ADD_TASK_SUCCESS = 'kanban/tasks/ADD_TASK_SUCCESS';
 const ADD_TASK_FAILURE = 'kanban/tasks/ADD_TASK_FAILURE';
+const MOVE_TASK = 'kanban/tasks/MOVE_TASK';
 
 // ---------- State ----------
 export interface TasksState {
@@ -46,10 +47,21 @@ interface AddTaskFailurePayload {
     error: string;
 }
 
+export interface DragPosition {
+    droppableId: ColumnId;
+    index: number;
+}
+
+interface MoveTaskPayload {
+    source: DragPosition;
+    destination: DragPosition | null;
+}
+
 type TasksAction =
     | PayloadAction<typeof ADD_TASK_REQUEST, AddTaskRequestPayload>
     | PayloadAction<typeof ADD_TASK_SUCCESS, AddTaskSuccessPayload>
-    | PayloadAction<typeof ADD_TASK_FAILURE, AddTaskFailurePayload>;
+    | PayloadAction<typeof ADD_TASK_FAILURE, AddTaskFailurePayload>
+    | PayloadAction<typeof MOVE_TASK, MoveTaskPayload>;
 
 export default function tasksReducer(state = initialState, action: TasksAction): TasksState {
     switch (action.type) {
@@ -70,6 +82,38 @@ export default function tasksReducer(state = initialState, action: TasksAction):
 
         case ADD_TASK_FAILURE:
             return { ...state, isSaving: false, error: action.payload.error };
+
+        case MOVE_TASK: {
+            const { source, destination } = action.payload;
+            if (!destination) return state;
+
+            if (source.droppableId === destination.droppableId && source.index === destination.index) {
+                return state;
+            }
+
+            const sourceTasks = [...state.byColumn[source.droppableId]];
+            const [movedTask] = sourceTasks.splice(source.index, 1);
+
+            if (source.droppableId === destination.droppableId) {
+                sourceTasks.splice(destination.index, 0, movedTask);
+                return {
+                    ...state,
+                    byColumn: { ...state.byColumn, [source.droppableId]: sourceTasks },
+                };
+            }
+
+            const destinationTasks = [...state.byColumn[destination.droppableId]];
+            destinationTasks.splice(destination.index, 0, movedTask);
+            
+            return {
+                ...state,
+                byColumn: {
+                    ...state.byColumn,
+                    [source.droppableId]: sourceTasks,
+                    [destination.droppableId]: destinationTasks,
+                },
+            };
+        }
 
         default:
             return state;
@@ -97,6 +141,14 @@ const addTaskSuccess = (
 const addTaskFailure = (error: string): PayloadAction<typeof ADD_TASK_FAILURE, AddTaskFailurePayload> => ({
     type: ADD_TASK_FAILURE,
     payload: { error },
+});
+
+export const moveTask = (
+    source: DragPosition,
+    destination: DragPosition | null,
+): PayloadAction<typeof MOVE_TASK, MoveTaskPayload> => ({
+    type: MOVE_TASK,
+    payload: { source, destination },
 });
 
 // ---------- Selectors ----------

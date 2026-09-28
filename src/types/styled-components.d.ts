@@ -10,6 +10,7 @@ declare module 'styled-components' {
             devices: typeof devices;
             shadows: {
                 card: string
+                dragging: string
             }
             radii: {
                 card: string

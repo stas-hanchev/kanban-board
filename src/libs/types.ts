@@ -16,4 +16,3 @@ export interface DialogState {
     open: boolean;
     column: ColumnId;
 }
-

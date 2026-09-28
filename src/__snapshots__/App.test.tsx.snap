@@ -1,0 +1,153 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App > It matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gKckzE jLgfUX"
+  >
+    <header
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic css-1hvrj3e-MuiPaper-root-MuiAppBar-root"
+      style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1ygil4i-MuiToolbar-root"
+      >
+        <div
+          class="sc-gsDMPd fYeuQk"
+        >
+          <div
+            class="MuiTypography-root MuiTypography-h6 css-utt09s-MuiTypography-root"
+          >
+            Kanban Board
+          </div>
+        </div>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-sizeMedium MuiButton-colorInherit css-grw16a-MuiButtonBase-root-MuiButton-root"
+          tabindex="0"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
+            data-testid="AddIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"
+            />
+          </svg>
+          <span
+            class="sc-dkPwfY iKdNfU"
+          >
+            Add Task
+          </span>
+        </button>
+      </div>
+    </header>
+    <main
+      class="sc-bdvwhi AUXbu"
+    >
+      <div
+        class="sc-furwPO hbxiCV"
+      >
+        <div
+          class="sc-eCIkAO fANOzq"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-subtitle1 css-xonvf8-MuiTypography-root"
+          >
+            To Do
+          </h2>
+          <div
+            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault css-3j45uq-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-eccknh-MuiChip-label"
+            >
+              0
+            </span>
+          </div>
+        </div>
+        <div
+          class="sc-iCfNyT hLpcnn"
+          data-rfd-droppable-context-id="_r_a_"
+          data-rfd-droppable-id="todo"
+        >
+          <div
+            class="sc-jRQBiJ hfbfrQ"
+          >
+            No tasks in this column
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-furwPO bNcOld"
+      >
+        <div
+          class="sc-eCIkAO fANOzq"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-subtitle1 css-xonvf8-MuiTypography-root"
+          >
+            In Progress
+          </h2>
+          <div
+            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault css-3j45uq-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-eccknh-MuiChip-label"
+            >
+              0
+            </span>
+          </div>
+        </div>
+        <div
+          class="sc-iCfNyT hLpcnn"
+          data-rfd-droppable-context-id="_r_a_"
+          data-rfd-droppable-id="inProgress"
+        >
+          <div
+            class="sc-jRQBiJ hfbfrQ"
+          >
+            No tasks in this column
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-furwPO krMGaw"
+      >
+        <div
+          class="sc-eCIkAO fANOzq"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-subtitle1 css-xonvf8-MuiTypography-root"
+          >
+            Done
+          </h2>
+          <div
+            class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault css-3j45uq-MuiChip-root"
+          >
+            <span
+              class="MuiChip-label css-eccknh-MuiChip-label"
+            >
+              0
+            </span>
+          </div>
+        </div>
+        <div
+          class="sc-iCfNyT hLpcnn"
+          data-rfd-droppable-context-id="_r_a_"
+          data-rfd-droppable-id="done"
+        >
+          <div
+            class="sc-jRQBiJ hfbfrQ"
+          >
+            No tasks in this column
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</DocumentFragment>
+`;

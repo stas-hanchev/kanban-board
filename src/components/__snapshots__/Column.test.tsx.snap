@@ -1,0 +1,68 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Column > It matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-furwPO hbxiCV"
+  >
+    <div
+      class="sc-eCIkAO fANOzq"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-subtitle1 css-xonvf8-MuiTypography-root"
+      >
+        To Do
+      </h2>
+      <div
+        class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault css-3j45uq-MuiChip-root"
+      >
+        <span
+          class="MuiChip-label css-eccknh-MuiChip-label"
+        >
+          2
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-iCfNyT hLpcnn"
+      data-rfd-droppable-context-id="_r_h_"
+      data-rfd-droppable-id="todo"
+    >
+      <div
+        aria-describedby="rfd-hidden-text-_r_h_-hidden-text-_r_i_"
+        class="sc-hKwBjT dgPqf"
+        data-rfd-drag-handle-context-id="_r_h_"
+        data-rfd-drag-handle-draggable-id="t1"
+        data-rfd-draggable-context-id="_r_h_"
+        data-rfd-draggable-id="t1"
+        draggable="false"
+        role="button"
+        tabindex="0"
+      >
+        <h6
+          class="MuiTypography-root MuiTypography-subtitle2 MuiTypography-gutterBottom css-5n2foq-MuiTypography-root"
+        >
+          First Task
+        </h6>
+      </div>
+      <div
+        aria-describedby="rfd-hidden-text-_r_h_-hidden-text-_r_i_"
+        class="sc-hKwBjT dgPqf"
+        data-rfd-drag-handle-context-id="_r_h_"
+        data-rfd-drag-handle-draggable-id="t2"
+        data-rfd-draggable-context-id="_r_h_"
+        data-rfd-draggable-id="t2"
+        draggable="false"
+        role="button"
+        tabindex="0"
+      >
+        <h6
+          class="MuiTypography-root MuiTypography-subtitle2 MuiTypography-gutterBottom css-5n2foq-MuiTypography-root"
+        >
+          Second Task
+        </h6>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
-import { renderWithProviders } from '../test/test-utils';
-import AddTaskDialog from './AddTaskDialog';
+import { renderWithProviders } from './test-utils';
+import AddTaskDialog from '../components/AddTaskDialog';
 
 describe('AddTaskDialog', () => {
     it('It doesn\'t render anything when open=false', () => {

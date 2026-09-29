@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { screen } from '@testing-library/react';
-import { renderWithRouter } from '../test/test-utils';
-import NotFoundPage from './NotFoundPage';
+import { renderWithRouter } from './test-utils';
+import NotFoundPage from '../pages/NotFoundPage';
 
 describe('NotFoundPage', () => {
     it('It shows 404 and a link back to the board', () => {

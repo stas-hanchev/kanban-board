@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TaskCard > It matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    data-rfd-droppable-context-id="_r_b_"
+    data-rfd-droppable-id="test-droppable"
+  >
+    <div
+      aria-describedby="rfd-hidden-text-_r_b_-hidden-text-_r_c_"
+      class="sc-hKwBjT dgPqf"
+      data-rfd-drag-handle-context-id="_r_b_"
+      data-rfd-drag-handle-draggable-id="t1"
+      data-rfd-draggable-context-id="_r_b_"
+      data-rfd-draggable-id="t1"
+      draggable="false"
+      role="button"
+      tabindex="0"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-subtitle2 MuiTypography-gutterBottom css-5n2foq-MuiTypography-root"
+      >
+        Set up routing
+      </h6>
+      <p
+        class="MuiTypography-root MuiTypography-body2 css-1hiexyu-MuiTypography-root"
+      >
+        react-router: 404 page
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

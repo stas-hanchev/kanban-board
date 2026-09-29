@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
-import { renderWithProviders } from '../test/test-utils';
-import Header from './Header';
+import { renderWithProviders } from './test-utils';
+import Header from '../components/Header';
 
 describe('Header', () => {
     it('It shows the board name', () => {

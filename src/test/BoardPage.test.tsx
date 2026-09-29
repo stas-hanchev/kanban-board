@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
-import { renderWithProviders } from '../test/test-utils';
-import BoardPage from './BoardPage';
+import { renderWithProviders } from './test-utils';
+import BoardPage from '../pages/BoardPage';
 
 describe('BoardPage', () => {
     it('It renders all three columns', () => {

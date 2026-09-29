@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { screen } from '@testing-library/react';
-import { renderWithDragContext } from '../test/test-utils';
-import Column from './Column';
+import { renderWithDragContext } from './test-utils';
+import Column from '../components/Column';
 import type { ColumnData } from '../libs/types';
 
 const columnWithTasks: ColumnData = {
